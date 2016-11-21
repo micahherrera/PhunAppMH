@@ -10,6 +10,6 @@ Tablet Screenshots:
 [Tablet1](https://github.com/micahherrera/PhunAppMH/blob/master/ss/tablet1.png)
 [Tablet2](https://github.com/micahherrera/PhunAppMH/blob/master/ss/tablet2.png)
 
-* Mace Windu (better known as Samuel L. Jackson): _You_ have lost!
+* Mace Windu: _You_ have lost!
 * Senator Palpatine: _No NO NOOO,_ YOUUU will die!
 * [Death by force electrocution]
