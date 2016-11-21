@@ -14,8 +14,6 @@ public interface EventDetailContract {
 
         void showShareMenu();
 
-        void goToLink();
-
         void goToMap(String address);
 
         void showDetails(Event event);

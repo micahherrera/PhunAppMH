@@ -33,8 +33,6 @@ public interface EventListContract {
 
         void loadEventsFromDB();
 
-        void sendEvent(String id);
-
         void saveEvents(List<Event> eventList, SWDBHelper swdbHelper);
 
     }

@@ -1,5 +1,7 @@
 package com.micahherrera.warelication.eventdetail;
 
+import android.util.Log;
+
 import com.micahherrera.warelication.data.Event;
 import com.micahherrera.warelication.data.EventRepository;
 import com.micahherrera.warelication.data.SWDBHelper;
@@ -28,7 +30,7 @@ public class EventDetailPresenter implements EventDetailContract.Presenter{
 
             @Override
             public void onError(String error) {
-
+                Log.d("TAG", "onError: errorLoading");
             }
         }, swdbHelper, id);
     }

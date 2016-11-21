@@ -63,11 +63,6 @@ public class EventListPresenter implements EventListContract.Presenter {
     }
 
     @Override
-    public void sendEvent(String id) {
-
-    }
-
-    @Override
     public void saveEvents(final List<Event> eventList, final SWDBHelper swdbHelper) {
         mRepo.clearEvents(new EventRepository.SaveEventCallback() {
             @Override

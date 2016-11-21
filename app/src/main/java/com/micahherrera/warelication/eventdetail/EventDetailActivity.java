@@ -104,11 +104,6 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
     }
 
     @Override
-    public void goToLink() {
-
-    }
-
-    @Override
     public void goToMap(String address) {
         String uri = String.format(Locale.ENGLISH, "geo:0,0?q="+address);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
