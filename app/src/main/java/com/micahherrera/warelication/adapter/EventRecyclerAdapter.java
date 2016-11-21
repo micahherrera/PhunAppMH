@@ -116,7 +116,9 @@ public class EventRecyclerAdapter
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.card_share_button:
-                    mView.showShareMenu();
+
+                    mView.showShareMenu(eventTitle.getText().toString(),
+                            eventDate.getText().toString(), eventLocation.getText().toString());
                     Log.d("TAG", "onClick: share");
                     break;
                 default:

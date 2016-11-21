@@ -13,7 +13,6 @@
             android:title="Share"
             android:icon="@android:drawable/ic_menu_share"
             app:showAsAction="ifRoom"
-            android:actionProviderClass=
-                "android.widget.ShareActionProvider"/>
+           />
 
     </menu>

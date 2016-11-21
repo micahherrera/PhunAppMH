@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
@@ -96,7 +95,12 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
 
     @Override
     public void showShareMenu() {
-
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "Join me for "+eventTitle.getText().toString() + " on " +
+                eventDate.getText().toString() + " at " + mAddress);
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check out this Event!");
+        startActivity(Intent.createChooser(intent, "Share"));
     }
 
     @Override
@@ -136,14 +140,8 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_event_detail, menu);
-
-        MenuItem item = menu.findItem(R.id.action_share);
-
-        mShareActionProvider = new ShareActionProvider(this);
-        mShareActionProvider.setShareIntent(getShareIntent());
-        MenuItemCompat.setActionProvider(item, mShareActionProvider);
-
         return true;
+
     }
 
     @Override
@@ -152,6 +150,9 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
             case R.id.action_call:
                 call(mPhone);
                 break;
+            case R.id.action_share:
+                showShareMenu();
+                break;
             case android.R.id.home:
                 finish();
                 break;
@@ -159,19 +160,6 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private Intent getShareIntent(){
-
-            Intent shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND);
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Join me for "+eventTitle.getText().toString() + " on " +
-                    eventDate.getText().toString() + " at " + mAddress);
-            shareIntent.setType("text/plain");
-
-            return shareIntent;
-
-
     }
 
 }

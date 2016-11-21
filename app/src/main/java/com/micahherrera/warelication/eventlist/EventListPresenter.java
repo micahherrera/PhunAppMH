@@ -41,20 +41,25 @@ public class EventListPresenter implements EventListContract.Presenter {
                 }
             });
         } else if (!mView.checkConnection()){
-            SWDBHelper swdbHelper = mView.getDBHelper();
-            mRepo.getDBEvents(new EventRepository.LoadEventsCallback() {
-                @Override
-                public void onEventsLoaded(List<Event> eventList) {
-                    mView.showEvents(eventList, false);
-                }
-
-                @Override
-                public void onError(String error) {
-                    mView.showNoEventsView();
-                    Log.d("TAG", "onError: "+error);
-                }
-            }, swdbHelper);
+            loadEventsFromDB();
         }
+    }
+
+    public void loadEventsFromDB(){
+        SWDBHelper swdbHelper = mView.getDBHelper();
+        mRepo.getDBEvents(new EventRepository.LoadEventsCallback() {
+            @Override
+            public void onEventsLoaded(List<Event> eventList) {
+                mView.showEvents(eventList, false);
+            }
+
+            @Override
+            public void onError(String error) {
+                mView.showNoEventsView();
+                Log.d("TAG", "onError: "+error);
+            }
+        }, swdbHelper);
+
     }
 
     @Override

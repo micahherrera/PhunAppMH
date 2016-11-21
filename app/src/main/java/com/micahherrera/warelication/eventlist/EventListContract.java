@@ -15,7 +15,7 @@ public interface EventListContract {
 
         void goToDetail(String id);
 
-        void showShareMenu();
+        void showShareMenu(String title, String date, String address);
 
         void showEvents(List<Event> eventList, boolean source);
 
@@ -30,6 +30,8 @@ public interface EventListContract {
     interface Presenter {
 
         void loadEvents();
+
+        void loadEventsFromDB();
 
         void sendEvent(String id);
 
