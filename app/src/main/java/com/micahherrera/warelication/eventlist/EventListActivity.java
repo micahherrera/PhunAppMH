@@ -160,7 +160,6 @@ public class EventListActivity extends AppCompatActivity implements EventListCon
             return false;
 
         }
-
     }
 
     @Override

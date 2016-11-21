@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -23,5 +24,6 @@
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
     </style>
+
 
 </resources>
