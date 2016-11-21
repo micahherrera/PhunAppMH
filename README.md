@@ -1,6 +1,7 @@
 # PhunAppMH
 
 Time: 7.48hrs
++ (minor) Testing/General Revision: ~1hrs
 
 Phone Screenshots: 
 [Phone1](https://github.com/micahherrera/PhunAppMH/blob/master/ss/phone1.png)
